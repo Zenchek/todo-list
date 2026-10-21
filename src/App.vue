@@ -1,11 +1,21 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+    <main class="main">
+        <TodoMain />
+        <Filters />
+        <TodoList />
+        <Counter />
+    </main>
 </template>
 
-<style scoped></style>
+<script setup>
+    import TodoMain from './components/TodoMain/TodoMain.vue';
+    import Filters from './components/Filters/Filters.vue';
+    import TodoList from './components/TodoList/TodoList.vue';
+    import Counter from './components/Counter/Counter.vue';
+</script>
+<style scoped>
+    .main{
+        max-width: 700px;
+        margin: auto;
+    }
+</style>
