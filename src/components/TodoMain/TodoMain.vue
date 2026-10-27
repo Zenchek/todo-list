@@ -1,18 +1,24 @@
 <template>
     <div class="todo-main">
         <h1>МОИ ЗАДАЧИ</h1>
-        <div class="todo-main__content">
+        <form class="todo-main__form" @submit.prevent="$emit('hendleAdd')">
             <div class="todo-main__input-container">
-                <input type="text" class="todo-input" placeholder="Впишите свою задачу">
+                <input 
+                v-model="newTitle"
+                type="text" 
+                class="todo-input" 
+                placeholder="Впишите свою задачу">
                 <button class="todo-button">Добавить</button>
             </div>
             <div class="todo-main__messagebox-error">
                 <p>c.lf yf[eq]</p>
             </div>
-        </div>
+        </form>
     </div>
 </template>
-<script setup></script>
+<script setup>
+defineEmits(['hendleAdd'])
+</script>
 <style scoped>
     .todo-main{
         display: flex;
@@ -20,7 +26,7 @@
         flex-direction: column;   
     }
 
-    .todo-main__content{
+    .todo-main__form{
         display: flex;
         flex-direction: column;
         gap: 1em;
