@@ -1,8 +1,8 @@
-import { version } from 'vite'
 import { ref, watch } from 'vue'
-import { parse } from 'vue/compiler-sfc'
 
 const STORAGE_KEY = "todo-notes"
+
+//localStorage.getItem(todo-notes)
 
 function loadFormStorage() {
     try{
@@ -28,7 +28,7 @@ function saveToStorage(data) {
     }
 }
 
-export function useNote() {
+export function useNotes() {
     const notes = ref(loadFormStorage().notes)
     
     // АвтоСохранение при любом изменении
@@ -40,7 +40,7 @@ export function useNote() {
         const trimmed = title.trim()
         if (!trimmed) return
         notes.value.push({
-            id: cripto.randomUUID(),
+            id: crypto.randomUUID(),
             title: trimmed,
             done: false,
             createdAt: new Date().toISOString(),

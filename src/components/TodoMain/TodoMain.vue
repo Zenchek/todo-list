@@ -1,7 +1,7 @@
 <template>
     <div class="todo-main">
         <h1>МОИ ЗАДАЧИ</h1>
-        <form class="todo-main__form" @submit.prevent="$emit('hendleAdd')">
+        <form class="todo-main__form" @submit.prevent="submitForm">
             <div class="todo-main__input-container">
                 <input 
                 v-model="newTitle"
@@ -17,7 +17,18 @@
     </div>
 </template>
 <script setup>
-defineEmits(['hendleAdd'])
+import { ref } from 'vue';
+
+const emit = defineEmits(['add'])
+
+const newTitle = ref('')
+
+function submitForm() {
+    if(!newTitle.value.trim()) return
+
+    emit('add', newTitle.value)
+    newTitle.value = ''
+}
 </script>
 <style scoped>
     .todo-main{
