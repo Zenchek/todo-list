@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "notes": [
+        {
+            "id": "b3f1c2a4-8e9d-4f1a-9c2b-7d6e5f4a3b2c",
+            "title": "Купить молоко",
+            "description": "2 литра, 2.5%",
+            "done": false,
+            "priority": "normal",
+            "tags": ["shopping"],
+            "createdAt": "2026-10-27T10:00:00.000Z",
+            "updatedAt": "2026-10-27T10:00:00.000Z"
+        }
+    ]
+}
