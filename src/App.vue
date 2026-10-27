@@ -1,26 +1,24 @@
 <template>
     <main class="main">
         <TodoMain 
-        @add="hendleAdd"/>
+        @add="handleAdd"/>
         <Filters />
         <TodoList 
         :notes="notes"
-        @toggle="toggleNote"
+        @toggle="totggelNote"
         @remove="removeNote"/>
     </main>
 </template>
 
 <script setup>
-    import { ref } from 'vue';
     import TodoMain from './components/TodoMain/TodoMain.vue';
     import Filters from './components/Filters/Filters.vue';
     import TodoList from './components/TodoList/TodoList.vue';
     import { useNotes } from './composables/useNotes.js';
 
-    const {notes, addNote, toggleNote, removeNote} = useNotes()
-    const newTitle = ref('')
+    const { notes, addNote, totggelNote, removeNote } = useNotes()
     
-    function hendleAdd(title){
+    function handleAdd(title) {
         addNote(title)
     }
 </script>

@@ -3,7 +3,7 @@
         <label class="todo-label">
             <input 
             type="checkbox"
-            :checked="useNote.done"
+            :checked="note.done"
             @change="$emit('toggle')"
             />
             <span class="todo-title">{{ note.title }}</span>

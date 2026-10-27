@@ -1,10 +1,12 @@
 <template>
-    <TodoItem 
-        v-for="note in notes"
-        :key="note.id"
-        :note="note"
-        @toggle="$emit('toggle', note.id)"
-        @remove="$emit('remove', note.id)"/>
+    <ul class="todo-list">
+        <TodoItem 
+            v-for="note in notes"
+            :key="note.id"
+            :note="note"
+            @toggle="$emit('toggle', note.id)"
+            @remove="$emit('remove', note.id)"/>
+    </ul>
 </template>
 <script setup>
 import TodoItem from '../TodoItem/TodoItem.vue';

@@ -53,7 +53,7 @@ export function useNotes() {
     }
 
     function removeNote(id) {
-        notes.value = notes.value.filter(n => n.id === id)
+        notes.value = notes.value.filter(n => n.id !== id)
     }
 
     return{
